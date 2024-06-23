@@ -126,7 +126,7 @@ BaseCommandMgr::processCommand(const isc::data::ConstElementPtr& cmd) {
         ConstElementPtr arg;
         std::string name = parseCommand(arg, cmd);
 
-        LOG_INFO(command_logger, COMMAND_RECEIVED).arg(name);
+        LOG_DEBUG(command_logger, DBG_COMMAND, COMMAND_RECEIVED).arg(name);
 
         ConstElementPtr response = handleCommand(name, arg, cmd);
 
